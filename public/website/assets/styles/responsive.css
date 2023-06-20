@@ -1,0 +1,157 @@
+@media (max-width: 1620px){
+    .header-comment, .header-comment:lang(ka){
+        font-size: 40px;
+    }
+    .main-slider .slick-arrow{
+        width: 60px;
+        height: 60px;
+    }
+    .main-slider .slick-next::before ,.main-slider .slick-next::after{
+        top: 14%;
+    }
+    .main-slider{
+        height: 460px;
+        margin: 0 0 70px 0;
+    }
+    .h3{
+        font-size: 24px;
+    }
+    .about-us_title{
+        font-size: 52px;
+        line-height: 70px;
+    }
+    .about-us_title:lang(ka){
+        font-size: 38px;
+        line-height: 52px;
+    }
+    .about-us_title img:first-of-type{
+        width: 90px;
+        top: 0;
+    }
+    .about-us_title img:last-of-type{
+        width: 130px;
+        top: 53px;
+    }
+    .about-us_text{
+        font-size: 22px;
+    }
+    .counter{
+        margin: 60px 0 130px 0;
+    }
+    .product-img{
+        width: 220px;
+        height: 220px;
+    }
+    .product-title, .product-title:lang(ka){
+        font-size: 20px;
+    }
+    .product-desc{
+        font-size: 20px;
+    }
+    .product-desc:lang(ka){
+        font-size: 22px;
+    }
+    .product{
+        margin: 0 0 70px 0;
+    }
+    .product-img2 span:first-of-type{
+        font-size: 22px;
+    }
+    .navbar{
+        margin: 90px auto 150px auto;
+    }
+    .navArea ul li a{
+        font-size: 34px;
+    }
+    .navArea ul li a:lang(ka){
+        font-size: 30px;
+    }
+    .pre-footer_div1, .pre-footer_div1:lang(ka){
+        font-size: 36px;
+    }
+    .pre-footer_div2 a, .pre-footer_div2 a:lang(ka){
+        font-size: 20px;
+    }
+    .footer-map{
+        height: 296px;
+        margin: 50px 0 20px 0;
+    }
+    .footer-info{
+        margin: 0 0 20px 0;
+    }
+    .footer-info a, .footer-info a:lang(ka){
+        font-size: 20px;
+    }
+    .counter-div span:first-of-type{
+        font-size: 40px;
+    }
+    .counter-div span:last-of-type{
+        font-size: 22px;
+    }
+}
+@media (max-width: 1400px) {
+
+}
+@media (max-width: 1200px){
+    .burger-icon{
+        display: block;
+    }
+   .header-menu{
+    display: none;
+   }
+   .header-last{
+    display: none;
+   }
+   .header {
+    padding: 16px 0 20px 0;
+   }
+   .header-img{
+    width: 100px;
+    height: 55px;
+   }
+   .header-comment, .header-comment:lang(ka){
+    font-size: 20px;
+    line-height: 30px;
+    margin: 100px 0 50px 150px;;
+   }
+   .main-slider .slick-arrow{
+    width: 30px;
+    height: 30px;
+    outline: 8px solid #fff;
+   }
+   .main-slider .slick-prev{
+    top: -18px;
+    right: 164px;
+   }
+   .main-slider .slick-next {
+    top: -18px;
+    right: 104px;
+}
+.main-slider{
+    height: 220px;
+    margin: 0 0 40px 0;
+}
+.h3 {
+    font-size: 20px;
+}
+.about-us_title{
+    font-size: 36px;
+    line-height: 52px;
+    margin: 1px 0 0 99px;
+    padding: 40px 300px 48px 0;
+}
+
+
+
+}
+@media (max-width: 992px) {
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+
+}
+@media (max-width: 440px) {
+    
+}
