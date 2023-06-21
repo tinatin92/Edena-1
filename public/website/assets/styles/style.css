@@ -175,15 +175,7 @@ header.header-shadow .header{
   
 }
 
-.header-menu:lang(ka) a{
-  font-size: 200px;
-  font-weight: 700;
-  font-family: 'BPG Nino Mtavruli';
-}
-.header-menu:lang(ka) .nav .menu-ul li a{
-  font-family: 'BPG Nino Mtavruli';
- 
-}
+
 .header-menu .nav .menu-ul li:hover a:not(.sub-menu a) {
   color: #faa61a;
 }
@@ -1824,6 +1816,8 @@ margin:38px 0 0 0 ;
   width: 40px;
   transform:translate(0,-5px) rotate(-45deg);
 }
-.header-menu:lang(ka) a{
+
+.header-menu:lang(ka) .nav .menu-ul li a{
   font-family: "BPG Nino Mtavruli" !important;
+  font-weight: 700;
 }
