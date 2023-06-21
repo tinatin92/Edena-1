@@ -1,7 +1,14 @@
 @media (max-width: 1620px) {
-  .header-comment,
-  .header-comment:lang(ka) {
+  .header-comment p,
+  .header-comment:lang(ka) P{
     font-size: 40px;
+  }
+  .search input:focus {
+    width: 100px;
+    outline: none;
+  }
+  .header-comment:lang(ka){
+    padding: 0 20px 0px 0;
   }
   .main-slider .slick-arrow {
     width: 60px;
@@ -22,7 +29,7 @@
     font-size: 52px;
     line-height: 70px;
   }
-  .about-us_title:lang(ka) {
+  .about-us_title:lang(ka) P{
     font-size: 38px;
     line-height: 52px;
   }
@@ -36,6 +43,10 @@
   }
   .about-us_text {
     font-size: 22px;
+  }
+  .about-us_text:lang(ka){
+    font-size: 20px;
+    line-height: 36px;
   }
   .counter {
     margin: 60px 0 130px 0;
@@ -93,6 +104,10 @@
   }
   .counter-div span:last-of-type {
     font-size: 22px;
+  }
+  .counter-div:lang(ka) span:last-of-type{
+    font-size: 22px;
+    line-height: 32px;
   }
   .about-us_main {
     margin: 10px 0 60px 0;
@@ -202,9 +217,17 @@
   .contact-main {
     margin: 100px 0 125px 0;
   }
+  .about-us_title{
+    padding: 40px 270px 48px 0;
+    margin: 0 0 0 100px
+  }
+  .about-us_text{
+    margin: 0 0 0 100px
+  }
+ 
 }
 @media (max-width: 1200px) {
-  body {
+  body, body:lang(ka) {
     font-size: 20px;
   }
   .alter-slider{
@@ -227,12 +250,17 @@
     width: 100px;
     height: 55px;
   }
-  .header-comment,
-  .header-comment:lang(ka) {
+  .header-comment{
+    
+    margin: 100px 0 50px 150px;
+  }
+  .header-comment p,
+  .header-comment:lang(ka) P{
+  
     font-size: 20px;
     line-height: 30px;
-    margin: 100px 0 50px 150px;
-    width: 70%;
+    
+   
   }
   .main-slider .slick-arrow {
     width: 30px;
@@ -257,11 +285,12 @@
   .about-us_title {
     font-size: 36px;
     line-height: 52px;
-    margin: 0px 0 0 0px;
-    padding: 40px 300px 48px 50px;
+    margin: 0px 0 0 50px;
+    padding: 40px 300px 48px 0px;
     width: 100%;
   }
-  .about-us_title:lang(ka) {
+ 
+  .about-us_title:lang(ka) P{
     font-size: 26px;
     line-height: 38px;
   }
@@ -439,6 +468,10 @@
     height: 350px;
     margin: 0;
   }
+  .about-us_main .about-us_title:lang(ka){
+    font-size: 26px;
+    line-height: 38px;
+  }
   .product-main_slider-min-slide {
     width: 102px;
     height: 102px;
@@ -574,8 +607,19 @@
   font-size: 20px;
   height: 82px;
 }
-
-
+.about-us_title img:first-of-type{
+  width: 70px;
+  right: 80px;
+  
+}
+.about-us_title img:last-of-type{
+  width: 100px;
+  right: 130px;
+  top: 55px;
+}
+.about-us_main .about-us_title img:last-of-type {
+  top: 64px;
+}
 }
 @media (max-width: 992px) {
   .product-main_slider-big {
@@ -587,7 +631,7 @@
   }
 }
 @media (max-width: 768px) {
-  body {
+  body, body:lang(ka) {
     font-size: 18px;
   }
   .container {
@@ -605,14 +649,14 @@
   }
 
   .header-comment,
-  .header-comment:lang(ka) {
+  .header-comment:lang(ka) P{
     width: 100%;
   }
   .header-comment {
     margin: 100px 0 30px 0px;
     padding: 0 104px 0 0;
   }
-  .header-comment:lang(ka) {
+  .header-comment:lang(ka) P{
     font-size: 18px;
   }
   .main-slider {
@@ -631,13 +675,20 @@
     display: none;
   }
   .about-us_title {
-    padding: 24px 100px 15px 6px;
+    padding: 40px 20px 15px 0;
     font-size: 28px;
     line-height: 44px;
+    margin: 0;
+
   }
-  .about-us_title:lang(ka) {
+  .about-us_title:lang(ka) P{
     font-size: 22px;
     line-height: 32px;
+  }
+  .about-us_main .about-us_title:lang(ka){
+    padding: 40px 20px 15px 0;
+    font-size: 20px;
+    margin: 0;
   }
   .about-us_text {
     margin: 0 0 0 0;
@@ -651,6 +702,10 @@
   .counter-div span:last-of-type {
     font-size: 16px;
     font-weight: 600;
+  }
+  .counter-div:lang(ka) span:last-of-type{
+    font-size: 16px;
+    line-height: 24px;
   }
   .counter-div {
     min-height: 113px;
@@ -675,7 +730,7 @@
   .product-title:lang(ka) {
     font-size: 16px;
   }
-  .product-desc {
+  .product-desc, .product-desc:lang(ka) {
     font-size: 16px;
   }
   .product-img2-img {

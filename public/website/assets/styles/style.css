@@ -172,14 +172,17 @@ header.header-shadow .header{
   font-weight: 500;
   margin: 0 50px 0 0;
   transition: 0.3s;
+  
 }
-.header-menu .nav .menu-ul li:lang(ka) a{
-  font-family: 'BPG Nino Mtavruli';
-}
+
 .header-menu:lang(ka) a{
-  font-size: 20px;
+  font-size: 200px;
   font-weight: 700;
   font-family: 'BPG Nino Mtavruli';
+}
+.header-menu:lang(ka) .nav .menu-ul li a{
+  font-family: 'BPG Nino Mtavruli';
+ 
 }
 .header-menu .nav .menu-ul li:hover a:not(.sub-menu a) {
   color: #faa61a;
@@ -307,9 +310,7 @@ header.header-shadow .header{
   width: 225px;
   outline: none;
 }
-.search input:focus .search{
-  width: 300px;
-}
+
 .search button {
   border: none;
   outline: none;
@@ -1822,4 +1823,7 @@ margin:38px 0 0 0 ;
 .burger-icon.open .burger-icon3{
   width: 40px;
   transform:translate(0,-5px) rotate(-45deg);
+}
+.header-menu:lang(ka) a{
+  font-family: "BPG Nino Mtavruli" !important;
 }
