@@ -46,12 +46,13 @@
             <div class="burher-menu-nav">
                 <nav>
                     <ul>
+                    @foreach($sections as $section)
                         <li class="burger-list">
-                        @foreach($sections as $section)
+                       
                             <a href="/{{ $section->getFullSlug() }}">{{ $section[app()->getlocale()]->title }}</a>
                              <span class="burger-img"> <img src="/website/assets/images/Group 10813.png"
                                     alt="img"></span>
-                                    @endforeach
+                                  
                             <div class="burger-submenu">
 
                                 <ul>
@@ -63,7 +64,7 @@
                                 </ul>
                             </div>
                         </li>
-                     
+                        @endforeach
                     </ul>
                 </nav>
             </div>

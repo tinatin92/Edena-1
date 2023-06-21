@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{ asset('website/assets/styles/style.css') }}">
 <link rel="stylesheet" href="{{ asset('website/assets/styles/responsive.css') }}">
+<link rel="stylesheet" href="{{ asset('website/assets/styles/lightbox.css') }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="/website/assets/icomoon-v1.0 (9)/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
- <link rel="shortcut icon" href="{{ asset('/website/assets/images/Edena_2.png')}}">
+ <link rel="shortcut icon" href="{{ asset('website/assets/images/Edena 2.png') }}">
 <title>Edena</title>
 @include('website.components.metaTags')
 

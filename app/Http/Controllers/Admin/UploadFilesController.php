@@ -12,7 +12,7 @@ class UploadFilesController extends Controller
 {
     public function uploadImage(Request $request)
     {
-
+       
         $file_name = uniqid().'.'.$request->file('file')->getClientOriginalExtension();
         // Generate Thumbnail
         Image::make($request->file('file'))->fit(config('config.thumbnail.width'), config('config.thumbnail.height'))
@@ -20,7 +20,7 @@ class UploadFilesController extends Controller
 
         // Save original image
         Image::make($request->file('file'))->save(config('config.image_path').$file_name, 70);
-
+       
         DB::table('temp_files_table')->insert([
             'file_name' => $file_name,
             'path' => config('config.image_path'),

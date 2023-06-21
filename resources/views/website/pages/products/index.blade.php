@@ -56,7 +56,7 @@
                     
                     <li @if(isset($filter_category) && ($cat->id == $filter_category->id )) class="active" @endif>
                         <a href="/{{$products->getfullslug()}}?category={{$cat->id}}" >{{ $cat->translate(app()->getlocale())->title }}</a>
-                        <img src="assets/images/Vector (10).png" alt="">
+                        <img src="/website/assets/images/Vector (10).png" alt="">
                     </li>
                     @endif
                     @endforeach
