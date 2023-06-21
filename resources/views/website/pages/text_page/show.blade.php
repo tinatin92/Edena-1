@@ -76,12 +76,12 @@
             @endif
     </section>
      @if(isset($counting_banner))
-    <section class="container">
+     <section class="container">
         <div class="counter">
             @foreach($counting_banner as $countBanner)
             <div class="counter-div">
-                <span>
-                    {{ $countBanner->translate(app()->getlocale())->numbers }}
+                <span class="datacount" data-count={{ $countBanner->translate(app()->getlocale())->numbers }}>
+                    
                 </span>
                 <span>
                     {{ $countBanner->translate(app()->getlocale())->title }}
