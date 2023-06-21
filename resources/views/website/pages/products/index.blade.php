@@ -87,7 +87,7 @@
                         <span class="product-title">{{$post->translate(app()->getlocale())->title}}</span>
                         @foreach($category as $post_category)
                         @if($post->additional['category'] == $post_category->id)
-                        <span class="product-title">{{ $post_category->translate(app()->getlocale())->title }}</span>
+                        <span class="product-desc">{{ $post_category->translate(app()->getlocale())->title }}</span>
                         @endif
                         @endforeach
                     </div>

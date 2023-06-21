@@ -59,11 +59,11 @@
                     @endforeach
                 </div>
                 <div style="padding-top:20px">
-                     <div class="form-group">
+                     <!-- <div class="form-group">
                         <label for="cover">{{trans('admin.cover')}}</label>
                         <br>
                         <input type="file" name="cover" value="file_types" multiple>
-                    </div> 
+                    </div>  -->
                   
                     <div class="form-group">
                         <label for="type">{{ trans('admin.type') }}</label>

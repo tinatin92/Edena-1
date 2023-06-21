@@ -501,6 +501,9 @@
     line-height: 28px;
     height: 54px;
   }
+  .news-text:lang(ka){
+    height: 118px;
+  }
   .news-detail-main {
     margin: 40px 0 45px 0;
   }

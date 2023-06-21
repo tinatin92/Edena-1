@@ -47,19 +47,33 @@
             </div>
         </div>
     </section>
+   
     <section>
-        <div class="news-slier">
-            @foreach($post->files as $file)
+        @if($post->files->count() <= 3)
+         
             <div class="container alter-slider">
+              @foreach($post->files as $file)
                 <div class="news-slide">
                     <a href="{{ image($file->file) }}" data-lightbox="roadtrip">
                         <img src="{{ image($file->file) }}" alt="img">
                     </a>
                 </div>
+                @endforeach
             </div>
-            @endforeach
-            
-        </div>
+           
+            @else
+            <div class="news-slier">
+                @foreach($post->files as $file)
+                <div class="news-slide">
+                    <a href="{{ image($file->file) }}" data-lightbox="roadtrip">
+                        <img src="{{ image($file->file) }}" alt="img">
+                    </a>
+                </div>
+                @endforeach
+
+                
+            </div>
+            @endif
     </section>
      @if(isset($counting_banner))
     <section class="container">

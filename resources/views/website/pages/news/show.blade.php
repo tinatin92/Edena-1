@@ -63,20 +63,34 @@
         </div>
     </section>
 
+   
     <section>
-        <div class="news-slier">
-           @foreach($model->files as $file)
-            <div class="news-slide">
-                <a href="{{ image($file->file) }}" data-lightbox="roadtrip">
-                    <img src="{{ image($file->file) }}" alt="img">
-                </a>
-
+        @if($model->files->count() <= 3)
+         
+            <div class="container alter-slider">
+              @foreach($model->files as $file)
+                <div class="news-slide">
+                    <a href="{{ image($file->file) }}" data-lightbox="roadtrip">
+                        <img src="{{ image($file->file) }}" alt="img">
+                    </a>
+                </div>
+                @endforeach
             </div>
-            @endforeach
            
-        </div>
-    </section>
+            @else
+            <div class="news-slier">
+                @foreach($model->files as $file)
+                <div class="news-slide">
+                    <a href="{{ image($file->file) }}" data-lightbox="roadtrip">
+                        <img src="{{ image($file->file) }}" alt="img">
+                    </a>
+                </div>
+                @endforeach
 
+                
+            </div>
+            @endif
+    </section>
    
 
 

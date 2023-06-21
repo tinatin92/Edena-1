@@ -156,12 +156,14 @@ header.header-shadow .header{
   list-style: none;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 .header-menu .nav .menu-ul li:hover {
   outline: none;
   border: none;
 }
 .header-menu .nav .menu-ul li a {
+  display: block;
   text-decoration: none;
   color: #000;
   font-size: 22px;
@@ -276,13 +278,16 @@ header.header-shadow .header{
 }
 
 .search input {
-  
+  font-family: "Jost", sans-serif;
   border: none;
   outline: none;
   width: 100px;
   padding: 0px 10px 0px 10px;
   transition: .3s;
   font-size: 22px;
+}
+.search input:lang(ka){
+  font-family: 'BPG Nino';
 }
 .search input::placeholder {
   font-size: 20px;
@@ -1222,6 +1227,7 @@ header.header-shadow .header{
   height: 146px;
   overflow: hidden;
   margin: 0 15px;
+  cursor: pointer;
 }
 .product-main_slider-min-slide img {
   width: 100%;
