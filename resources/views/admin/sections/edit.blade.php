@@ -83,7 +83,7 @@
                         @endforeach
                     </div>
                     <div style="padding-top:20px">
-                     <div class="form-group">
+                     <!-- <div class="form-group">
                             <label for="cover">{{ trans('admin.cover') }}</label>
                             <br>
                             <div class="row">
@@ -106,7 +106,7 @@
 
 
 
-                        </div>
+                        </div> -->
                             
 
                         <input type="hidden" name="id" value="cover" />

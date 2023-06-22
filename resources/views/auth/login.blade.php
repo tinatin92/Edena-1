@@ -29,7 +29,7 @@
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" style="text-align: center" data-tilt>
-					<img  src="{{ asset('/website/assets/images/Edena_2.png')}}" alt="IMG">
+					<img  src="{{ asset('website/assets/images/Edena 2.png') }}" alt="IMG">
 				</div>
 
 				<form method="POST" class="login100-form validate-form" action="{{ route('login', app()->getLocale()) }}">

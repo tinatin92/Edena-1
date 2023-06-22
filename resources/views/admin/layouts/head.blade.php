@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('/website/assets/images/Edena_2.png')}}">
+    <link rel="shortcut icon" href="{{ asset('website/assets/images/Edena 2.png') }}">
     <!-- App css -->
     <link href="{{ asset('admin/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('admin/css/icons.min.css')}}" rel="stylesheet" type="text/css" />

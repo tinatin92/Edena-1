@@ -38,7 +38,7 @@ return [
 	"search_pagination" => [
 		"title" => "Paginate",
 		"type" => "text",
-		"value" => "6",
+		"value" => "4",
 	],
 	"campaigns_pagination" => [
 		"title" => "Paginate",
@@ -58,7 +58,7 @@ return [
 	"F_address_Map" => [
 		"title" => "address",
 		"type" => "text",
-		"value" => " https://www.google.com.qa/maps/d/u/0/embed?mid=14whz0r2TxoTAzO4umrA_w7Zg3Av0xwI&ehbc=2E312F" ,
+		"value" => "https://www.google.com.qa/maps/d/u/0/embed?mid=14whz0r2TxoTAzO4umrA_w7Zg3Av0xwI&ehbc=2E312F",
 	],
 	"facebook" => [
 		"title" => "Facebook",
@@ -68,7 +68,7 @@ return [
 	"instagram" => [
 		"title" => "instagram",
 		"type" => "text",
-		"value" => "https://www.facebook.com/rights.ge",
+		"value" => null,
 	],
 	"twitter" => [
 		"title" => "Twitter",
