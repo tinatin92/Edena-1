@@ -28,7 +28,7 @@ return [
 	"Product_list_pagination" => [
 		"title" => "Paginate",
 		"type" => "text",
-		"value" => "5",
+		"value" => "2",
 	],
 	"News/Project_list_pagination" => [
 		"title" => "Paginate",
@@ -58,7 +58,7 @@ return [
 	"F_address_Map" => [
 		"title" => "address",
 		"type" => "text",
-		"value" => " https://www.google.com.qa/maps/d/u/0/embed?mid=14whz0r2TxoTAzO4umrA_w7Zg3Av0xwI&ehbc=2E312F" ,
+		"value" => "https://www.google.com.qa/maps/d/u/0/embed?mid=14whz0r2TxoTAzO4umrA_w7Zg3Av0xwI&ehbc=2E312F",
 	],
 	"facebook" => [
 		"title" => "Facebook",

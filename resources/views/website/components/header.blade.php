@@ -49,7 +49,7 @@
                         <li class="burger-list">
                         @foreach($sections as $section)
                             <a href="/{{ $section->getFullSlug() }}">{{ $section[app()->getlocale()]->title }}</a>
-                             <span class="burger-img"> <img src="/website/assets/images/Group 10813.png"
+                             <span class="burger-img"> <img src="{{ asset('website/assets/images/Group 10813.png') }}"
                                     alt="img"></span>
                                     @endforeach
                             <div class="burger-submenu">

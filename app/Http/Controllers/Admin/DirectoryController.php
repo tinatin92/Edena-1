@@ -68,8 +68,8 @@ class DirectoryController extends Controller
         $directory->update($values);
         $directory->save();
 
-        return Redirect::route('directory.list', [app()->getLocale(), $directory->type_id]);
-    }
+        return  redirect()->back();
+        }
 
     public function destroy($directory)
     {

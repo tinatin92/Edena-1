@@ -6,9 +6,11 @@ body {
   scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 22px;
+  line-height: 1.5;
 }
 body:lang(ka){
   font-family: 'BPG Nino';
+  font-size: 24px;
 }
 * {
   margin: 0;
@@ -154,27 +156,26 @@ header.header-shadow .header{
   list-style: none;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 .header-menu .nav .menu-ul li:hover {
   outline: none;
   border: none;
 }
 .header-menu .nav .menu-ul li a {
+  display: block;
   text-decoration: none;
   color: #000;
   font-size: 22px;
   font-weight: 500;
   font-size: 20px;
-  font-weight: 700;
-  font-family: "BPG Nino Mtavruli";
+  font-weight: 500;
   margin: 0 50px 0 0;
   transition: 0.3s;
+  
 }
-.header-menu:lang(ka) a{
-  font-size: 20px;
-  font-weight: 700;
-  font-family: 'BPG Nino Mtavruli';
-}
+
+
 .header-menu .nav .menu-ul li:hover a:not(.sub-menu a) {
   color: #faa61a;
 }
@@ -185,9 +186,7 @@ header.header-shadow .header{
   border-radius: 30px;
   border: 1px solid #fff;
 }
-.header-menu:lang(ka) a:last-of-type {
-  padding: 16px 30px 11px 30px;
-}
+
 .header-menu nav .menu-ul .contact:hover a {
   background-color: #fff;
   border: 1px solid #faa61a;
@@ -274,13 +273,16 @@ header.header-shadow .header{
 }
 
 .search input {
-  
+  font-family: "Jost", sans-serif;
   border: none;
   outline: none;
   width: 100px;
   padding: 0px 10px 0px 10px;
   transition: .3s;
   font-size: 22px;
+}
+.search input:lang(ka){
+  font-family: 'BPG Nino';
 }
 .search input::placeholder {
   font-size: 20px;
@@ -300,9 +302,7 @@ header.header-shadow .header{
   width: 225px;
   outline: none;
 }
-.search input:focus .search{
-  width: 300px;
-}
+
 .search button {
   border: none;
   outline: none;
@@ -354,7 +354,7 @@ header.header-shadow .header{
 }
 .header-comment {
   margin: 160px 0 90px 250px;
-  padding: 0 150px 0 0;
+  
   display: block;
    font-size: 44px;
   font-weight: 500;
@@ -363,7 +363,7 @@ header.header-shadow .header{
  
   width: 50%;
 }
-.header-comment:lang(ka) {
+.header-comment:lang(ka) p{
   font-weight: 700;
   line-height: 60px;
   font-family: "BPG Nino Mtavruli";
@@ -488,17 +488,19 @@ header.header-shadow .header{
   transition: transform 3s, opacity 3s;
 }
 
-.about-us_main .about-us_title:lang(ka){
+.about-us_main .about-us_title:lang(ka) {
   font-family: 'BPG Nino Mtavruli';
   font-size: 38px;
   font-weight: bold;
   padding: 40px 270px 40px 0;
+  line-height: 54px;
 }
-.about-us_title:lang(ka) {
+.about-us_title:lang(ka) p{
   font-size: 44px;
   font-weight: 700;
   line-height: 60px;
-  padding: 36px 350px 40px 0;
+  
+  font-family: 'BPG Nino Mtavruli';
 }
 .about-us_main {
   margin: 50px 0 100px 0;
@@ -826,19 +828,24 @@ header.header-shadow .header{
   font-weight: 700;
   font-family: "BPG Nino Mtavruli";
 }
-.pre-footer_div2 a:lang(ka) {
-  font-family: "BPG Nino";
-}
+
 .footer-map {
-  margin: 50px 0 40px 0;
+  margin: 50px 0 0px 0;
   width: 100%;
-  height: 350px;
+  height: 410px;
   overflow: hidden;
-  filter: grayscale(100%);
 }
+
+
+
 .footer-map iframe {
   width: 100%;
   height: 100%;
+ margin-top: -62px;
+ border: 0;
+}
+#watermark{
+  background: none;
 }
 .footer-info {
   display: flex;
@@ -935,6 +942,7 @@ header.header-shadow .header{
 }
 .breadcrumbs ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .breadcrumbs ul li {
@@ -1064,6 +1072,7 @@ header.header-shadow .header{
 }
 .product-list_search ul {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 .product-list_search ul li {
@@ -1211,6 +1220,7 @@ header.header-shadow .header{
   height: 146px;
   overflow: hidden;
   margin: 0 15px;
+  cursor: pointer;
 }
 .product-main_slider-min-slide img {
   width: 100%;
@@ -1388,6 +1398,7 @@ header.header-shadow .header{
 }
 .news-detail-title-text:lang(ka){
   font-family: 'BPG Nino Mtavruli';
+  line-height: 54px;
 }
 .news-floating-img{
   position: absolute;
@@ -1398,12 +1409,14 @@ header.header-shadow .header{
 .news-detail-text{
   margin: 0 0 35px 0;
 }
+
 .news-section{
   margin: 0 auto 100px auto;
 }
 .news-slier .slick-track{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .news-slier .slick-list{
   overflow: hidden;
@@ -1430,6 +1443,13 @@ header.header-shadow .header{
   width: 92%;
   margin: 170px 0 100px 0;
  
+}
+.alter-slider{
+  width: 70%;
+  margin: 0 0 0 350px;
+  display: flex;
+  align-items: center;
+
 }
 .search-section-search form{
   display: flex;
@@ -1690,15 +1710,15 @@ font-size: 22px;
 .burger-menu{
   position: fixed;
   width: 450px;
-  top: 100px;
-  right: 100px;
+  top: 91px;
+  right: -1000px;
   padding: 40px 65px 100px 65px;
   background-color:#fff;
- border: 3px solid #000;
- display: none;
+ border: 1px solid #E2E2E2;
+ 
 }
 .burger-menu.open{
-  display: block;
+  right: 0;
 }
 .burger-menu .language a{
   font-size: 18px;
@@ -1739,6 +1759,7 @@ margin:38px 0 0 0 ;
 .burger-submenu li a{
   font-size: 20px;
   font-weight: 400;
+  
 }
 .burger-list{
   width: 50%;
@@ -1794,4 +1815,9 @@ margin:38px 0 0 0 ;
 .burger-icon.open .burger-icon3{
   width: 40px;
   transform:translate(0,-5px) rotate(-45deg);
+}
+
+.header-menu:lang(ka) .nav .menu-ul li a{
+  font-family: "BPG Nino Mtavruli" !important;
+  font-weight: 700;
 }

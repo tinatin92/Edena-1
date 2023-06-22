@@ -164,7 +164,7 @@ class SectionController extends Controller
             }
         }
 
-        return Redirect::route('section.list', [app()->getLocale()]);
+        return  redirect()->back();
     }
 
     public function destroy($id)

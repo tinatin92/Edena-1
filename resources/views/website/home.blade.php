@@ -16,7 +16,7 @@
            
             @foreach($mainBanner->files as $file)
             <div class="mainslider-slide">
-                <a href="{{ $mainBanner->translate(app()->getlocale())->slug }}">
+                <a href="{{ $mainBanner->translate(app()->getlocale())->redirect_link }}">
                     
                     
                     <img src="{{ image($file->file) }}" alt="img">

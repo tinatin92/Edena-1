@@ -53,7 +53,7 @@
                         </div>
                         <div>
                             <button>
-                                Send
+                                {{ __('website.send') }}
                             </button>
                         </div>
 
@@ -63,8 +63,8 @@
 
             <div class="contact-info">
                 <div class="contact-info-div">
-                    <div class="contact-greentitle">Working hours</div>
-                    <div>Monday - Friday</div>
+                    <div class="contact-greentitle">{{ __('website.Working_hours') }}</div>
+                    <div>{{ __('website.Working day - First') }} - {{ __('website.Working day - Last') }}</div>
                     <div>10:00 - 18:00</div>
                   
                     <div class="contact-greentitle con-margin">{{ __('website.contact') }}</div>

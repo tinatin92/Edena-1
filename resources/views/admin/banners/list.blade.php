@@ -18,9 +18,12 @@
         <div class="card-box">
             <div style="display: flex; align-items:center; justify-content: space-between; padding:20px 0">
                 <h4 class="mt-0 header-title float-left">{{ trans('bannerTypes.'.$type['name']) }}</h4>
-
-                <a  href="{{ route('banner.create', [app()->getLocale(), $type['id']]) }}" type="button" class="float-right btn btn-info waves-effect width-md waves-light">{{ trans('admin.add_banner') }}</a>
-
+              
+                @if($type['id'] == 2 && count($banners) >= 4)
+                <a href="{{ route('banner.create', [app()->getLocale(), $type['id']]) }}" type="button" class="float-right btn btn-info waves-effect width-md waves-light none" style="display: none">{{ trans('admin.add_banner') }}</a>
+            @else
+                <a href="{{ route('banner.create', [app()->getLocale(), $type['id']]) }}" type="button" class="float-right btn btn-info waves-effect width-md waves-light">{{ trans('admin.add_banner') }}</a>
+            @endif
             </div>
 
             <div class="container-fluid">

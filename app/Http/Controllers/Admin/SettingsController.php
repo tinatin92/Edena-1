@@ -60,7 +60,7 @@ class SettingsController extends Controller
         //         }
         //     }
         // }
-        return redirect('/'.app()->getLocale().'/admin')->with('message', trans('admin.successfully_saved'));
+        return redirect('/'.app()->getLocale().'/admin/settings/edit')->with('message', trans('admin.successfully_saved'));
         // return redirect()->back()->with('message', trans('admin.successfully_saved'));
     }
 }

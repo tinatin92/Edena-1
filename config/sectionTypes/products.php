@@ -24,14 +24,6 @@ return [
 
             ],
 
-            'desc' => [
-                'type' => 'textarea',
-                'error_msg' => 'title_is_required',
-                'required' => 'required',
-                'max' => '1000',
-                'min' => '3',
-
-            ],
             'text' => [
                 'type' => 'textarea',
             ],

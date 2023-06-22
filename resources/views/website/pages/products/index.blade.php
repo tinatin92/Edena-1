@@ -47,7 +47,7 @@
             </div>
             <div class="product-list_search">
                 <ul>
-                    <li >
+                    <li @if(!isset($filter_category)) class="active" @endif>
                         <a href="/{{$products->getfullslug()}}" >{{trans('website.all')}}</a>
                         <img src="assets/images/Vector (10).png" alt="">
                     </li>
@@ -84,12 +84,13 @@
                         @endif
                     </div>
                     <div>
-                        <span class="product-title">{{$post->translate(app()->getlocale())->title}}</span>
                         @foreach($category as $post_category)
                         @if($post->additional['category'] == $post_category->id)
                         <span class="product-title">{{ $post_category->translate(app()->getlocale())->title }}</span>
                         @endif
                         @endforeach
+                        <span class="product-title">{{$post->translate(app()->getlocale())->title}}</span>
+                       
                     </div>
                 </a>
             </div>
