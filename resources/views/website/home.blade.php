@@ -61,6 +61,7 @@
         </div>
     </section>
     @endif
+    
     @if(isset($products))
     <section class="container">
         <h3 class="h3">{{ $products->translate(app()->getlocale())->title }}</h3>
