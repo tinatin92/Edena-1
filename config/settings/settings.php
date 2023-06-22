@@ -38,7 +38,7 @@ return [
 	"search_pagination" => [
 		"title" => "Paginate",
 		"type" => "text",
-		"value" => "6",
+		"value" => "4",
 	],
 	"campaigns_pagination" => [
 		"title" => "Paginate",
@@ -68,7 +68,7 @@ return [
 	"instagram" => [
 		"title" => "instagram",
 		"type" => "text",
-		"value" => "https://www.facebook.com/rights.ge",
+		"value" => null,
 	],
 	"twitter" => [
 		"title" => "Twitter",

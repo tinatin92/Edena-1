@@ -1,4 +1,6 @@
 <footer class="container">
+@if(isset($model))
+    @if($model->type_id !== 3)
     <div class="pre-footer">
         <div class="pre-footer_div1">
             
@@ -18,6 +20,8 @@
             </a>
         </div>
     </div>
+    @endif
+    @endif
     <div class="footer-map">
         <iframe
             src="{{ settings('F_address_Map') }}"  width="640" height="480"></iframe>
