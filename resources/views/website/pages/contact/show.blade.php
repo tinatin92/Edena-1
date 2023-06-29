@@ -12,7 +12,7 @@
                 <ul>
                     <li>
                         <span class="icon-_1"></span>
-                        <a href="/{{app()->getlocale()}}">{{ trans('website.home') }}</a>
+                        <a href="/{{app()->getlocale()}}">{{ trans('website.breadcrumbs_home') }}</a>
                     </li>
                     <li>
                         <span class="icon-_1"></span>
@@ -47,19 +47,19 @@
                         <input type="hidden" placeholder="Name" name="section_type_id" value="{{$model->type_id}}">
                         <div class="star">
                             <label for="name">{{ __('admin.name_surname') }}</label>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="name" id="name" required>
                         </div>
                         <div class="star">
                             <label for="mail">{{ __('admin.Contact_email') }}</label>
-                            <input type="text" name="email" id="mail">
+                            <input type="text" name="email" id="mail" required>
                         </div>
                         <div class="textarea">
                             <label for="massage">{{ __('admin.Contact_massage') }}</label>
-                            <textarea name="massage" id="massage"></textarea>
+                            <textarea name="text" id="massage" required></textarea>
                         </div>
                         <div>
                             <button>
-                                Send
+                                {{ __('website.Send') }}
                             </button>
                         </div>
 
@@ -69,8 +69,8 @@
 
             <div class="contact-info">
                 <div class="contact-info-div">
-                    <div class="contact-greentitle">Working hours</div>
-                    <div>Monday - Friday</div>
+                    <div class="contact-greentitle">{{ __('website.Working_hours') }}</div>
+                    <div>{{ __('website.Working day - First') }} - {{ __('website.Working day - Last') }}</div>
                     <div>10:00 - 18:00</div>
                   
                     <div class="contact-greentitle con-margin">{{ __('website.contact') }}</div>

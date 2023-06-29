@@ -14,7 +14,7 @@
                 <ul>
                     <li>
                         <span class="icon-_1"></span>
-                        <a href="/{{app()->getlocale()}}">{{ trans('website.home') }}</a>
+                        <a href="/{{app()->getlocale()}}">{{ trans('website.breadcrumbs_home') }}</a>
                     </li>
                     <li>
                         <span class="icon-_1"></span>
@@ -85,7 +85,8 @@
 
         </div>
     </section>
-    
+    @if(isset($products_slider) && (count($products_slider) > 0))
+
     <section class="container">
         <div class="more-product-title">
             <h3 class="h3">{{ __('website.more_products') }}</h3>
@@ -99,12 +100,13 @@
                         <img src="{{ image($slider->thumb) }}" alt="">
                     </div>
                     <div>
-                        <span class="product-title">{{ $slider->translate(app()->getlocale())->title }}</span>
                         @foreach($category as $post_category)
                         @if($slider->additional['category'] == $post_category->id)
                         <span class="product-desc">{{ $post_category->translate(app()->getlocale())->title }}</span>
                         @endif
                         @endforeach
+                        <span class="product-title">{{ $slider->translate(app()->getlocale())->title }}</span>
+                       
                     </div>
                 </a>
             </div>
@@ -112,7 +114,7 @@
           
         </div>
     </section>
-
+    @endif
 
 </main>
 

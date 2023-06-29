@@ -11,7 +11,7 @@
                 <ul>
                     <li>
                         <span class="icon-_1"></span>
-                        <a href="/{{app()->getlocale()}}">{{ trans('website.home') }}</a>
+                        <a href="/{{app()->getlocale()}}">{{ trans('website.breadcrumbs_home') }}</a>
                     </li>
                     <li>
                         <span class="icon-_1"></span>

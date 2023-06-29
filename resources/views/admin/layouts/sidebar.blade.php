@@ -86,20 +86,19 @@
 
                 @if (auth()->user()->isType('admin'))
 					@if (!empty(directoryTypes()))
-						<li>
-							<a href="javascript: void(0);">
-								<i class="mdi mdi-wrap-disabled"></i>
-								<span> {{ trans('admin.directories') }} </span>
-								<span class="menu-arrow"></span>
-							</a>
-
-							<ul class="nav-second-level" aria-expanded="false">
+					
 								@foreach (directoryTypes() as $key => $directoryType)
-								<li><a href="{{ route('directory.list', [app()->getLocale(), $key]) }}">{{ trans('directoryTypes.'.$directoryType) }}</a></li>
+                              
+								<li>
+                                   
+                                    <a href="{{ route('directory.list', [app()->getLocale(), $key]) }}">
+                                        <i class="mdi mdi-wrap-disabled"></i>
+                                        {{ trans($directoryType) }}
+                                    </a>
+                                    </li>
 								@endforeach
 								
-							</ul>
-						</li>
+						
 					@endif
                     {{-- <li>
                         <a href="/{{ app()->getLocale() }}/admin/languages" target="blank">

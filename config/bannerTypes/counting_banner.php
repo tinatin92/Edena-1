@@ -14,7 +14,11 @@ return [
                 'min' => '3',
 
             ],
-            'numbers' => [
+            'Counting_numbers' => [
+                'type' => 'text',
+                'required' => 'required|numeric',
+            ],
+            'Counting_numbers_symbol' => [
                 'type' => 'text',
             ],
             'active' => [

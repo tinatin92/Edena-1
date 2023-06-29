@@ -10,7 +10,7 @@
                 <ul>
                     <li>
                         <span class="icon-_1"></span>
-                        <a href="/{{app()->getlocale()}}">{{ trans('website.home') }}</a>
+                        <a href="/{{app()->getlocale()}}">{{ trans('website.breadcrumbs_home') }}</a>
                     </li>
                     @foreach ($breadcrumbs as $breadcrumb)
                     <li>
@@ -36,6 +36,7 @@
 
                 <div class="product-search search">
                     <form action="/{{ app()->getLocale() }}/SearchProduct" method="GET" role="SearchProduct">
+                        @csrf
                         <button>
                             <span class="icon-Group-10097"></span>
                         </button>
@@ -45,18 +46,18 @@
                 </div>
 
             </div>
-            <div class="product-list_search">
+            <div class="product-list_search" >
                 <ul>
-                    <li >
+                    <li @if(!isset($filter_category)) class="active" @endif>
                         <a href="/{{$products->getfullslug()}}" >{{trans('website.all')}}</a>
-                        <img src="assets/images/Vector (10).png" alt="">
+                        <img src="{{ asset('website/assets/images/Vector (10).png') }}" alt="bridge">
                     </li>
                     @foreach($category as $key => $cat)
                     @if($cat ==! 0)
                     
                     <li @if(isset($filter_category) && ($cat->id == $filter_category->id )) class="active" @endif>
                         <a href="/{{$products->getfullslug()}}?category={{$cat->id}}" >{{ $cat->translate(app()->getlocale())->title }}</a>
-                        <img src="/website/assets/images/Vector (10).png" alt="">
+                        <img src="{{ asset('website/assets/images/Vector (10).png') }}" alt="bridge">
                     </li>
                     @endif
                     @endforeach
@@ -72,11 +73,11 @@
     </section>
     <section class="container">
 
-        <div class="product-list products">
+        <div class="product-list products" id="prosearch" >
             @if(isset($products_posts) && (count($products_posts) > 0))
             @foreach($products_posts as $post)
             <div class="product">
-                <a href="/{{$post->getfullslug()}}#{{$post->id}}" class="product-list-item"  id="{{$post->category}}">
+                <a href="/{{$post->getfullslug()}}#{{$post->id}}" class="product-list-item" id="{{$post->category}}">
                     <div class="product-img">
                         @if(isset($post->thumb))
                                    
@@ -84,12 +85,13 @@
                         @endif
                     </div>
                     <div>
-                        <span class="product-title">{{$post->translate(app()->getlocale())->title}}</span>
                         @foreach($category as $post_category)
                         @if($post->additional['category'] == $post_category->id)
-                        <span class="product-desc">{{ $post_category->translate(app()->getlocale())->title }}</span>
+                        <span class="product-title">{{ $post_category->translate(app()->getlocale())->title }}</span>
                         @endif
                         @endforeach
+                        <span class="product-desc">{{$post->translate(app()->getlocale())->title}}</span>
+                       
                     </div>
                 </a>
             </div>

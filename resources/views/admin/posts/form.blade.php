@@ -42,8 +42,12 @@
 @endif
 
 <div class="form-group text-right mb-0">
+    <a href="{{ route('post.list', ['sec' => $section->id, 'locale' => app()->getLocale()]) }}" type="button"
+        class="btn btn-info waves-effect width-md waves-light">Go Back</a>
     <button class="btn btn-primary waves-effect waves-light mr-1" type="submit">
         {{ trans('admin.save') }}
     </button>
+   
+     
 </div>
                 

@@ -35,6 +35,6 @@ class LanguageController extends Controller
             }
         }
 
-        return redirect('/'.app()->getLocale().'/admin')->with('message', trans('admin.successfully_saved'));
+        return redirect('/'.app()->getLocale().'/admin/languages/edit')->with('message', trans('admin.successfully_saved'));
     }
 }

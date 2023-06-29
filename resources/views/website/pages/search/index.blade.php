@@ -32,7 +32,7 @@
                 </button>
             </form>
             <div class="search-result">
-                <span>  {{ trans('admin.Finding') }} </span>
+                <span>  {{ trans('website.found') }} </span>
                 <span>{{ $posts->total() }}</span>
             </div>
         </div>

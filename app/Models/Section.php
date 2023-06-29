@@ -173,39 +173,40 @@ class Section extends Model
         return $count;
     }
 
-    public function getTranslatedFullSlugs($slugs = [], $parent = null)
-    {
+    public function getTranslatedFullSlugs($slugs = [], $parent = null) {
 
-        if (! count($slugs)) {
-            $translations = $this->translations;
-            foreach ($translations as $key => $value) {
-                $slugs[$value->locale] = $value->slug;
-            }
-        // dd($slugs);
-
-        // $parent = $this->parent;
-        } else {
-            $translations = $parent->translations;
-
-            foreach ($translations as $key => $value) {
-                $slugs[$value->locale] = $value->slug.'/'.$slugs[$value->locale];
-            }
-
-            $parent = $parent->parent;
+        if(!count($slugs)) {
+          $translations = $this->translations;
+          foreach ($translations as $key => $value) {
+            $slugs[$value->locale] = $value->slug;
+          }
+          // dd($slugs);
+    
+          // $parent = $this->parent;
         }
-
-        if ($parent == null) {
-            foreach ($slugs as $key => $value) {
-                if (count($_GET)) {
-                    $slugs[$key] = $key.'/'.$value.'?'.http_build_query($_GET);
-                } else {
-                    $slugs[$key] = $key.'/'.$value;
-                }
-            }
-
-            return $slugs;
+    
+        else {
+          $translations = $parent->translations;
+    
+          foreach ($translations as $key => $value) {
+            $slugs[$value->locale] = $value->slug . '/' . $slugs[$value->locale];
+          }
+    
+          $parent = $parent->parent;
         }
-
+    
+        if($parent == null) {
+          foreach ($slugs as $key => $value) {
+            if(count($_GET))
+              $slugs[$key] = $key . '/' . $value . "?" . http_build_query($_GET);
+            else {
+              $slugs[$key] = $key . '/' . $value;
+            }
+          }
+          return $slugs;
+        }
+    
         return $this->getTranslatedFullSlugs($slugs, $parent);
-    }
+      }
+
 }

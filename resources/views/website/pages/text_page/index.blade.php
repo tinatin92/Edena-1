@@ -25,7 +25,7 @@
             <div class="container">
 
                 <div class="brc-link">
-                    <a href="/{{app()->getlocale()}}">{{ trans('website.home') }}</a>
+                    <a href="/{{app()->getlocale()}}">{{ trans('website.breadcrumbs_home') }}</a>
                     <div class="line-brc"></div>
                     @foreach ($breadcrumbs as $breadcrumb)
                     <a href="/{{ $breadcrumb['url'] }}" class="brc-active">{{ $breadcrumb['name'] }}</a>

@@ -135,7 +135,6 @@ $(window).scroll(function(){
   }
 });
 
-
 $(window).scroll(function() {
   var windowHeight = $(window).height();
   var scrollTop = $(window).scrollTop();
@@ -148,7 +147,7 @@ $(window).scroll(function() {
       if (!$this.hasClass('counted')) {
         $this.addClass('counted');
 
-        var countTo = $this.attr('data-count');
+        var countTo = parseInt($this.attr('data-count'));
 
         $({ countNum: $this.text() }).animate({
           countNum: countTo
@@ -169,34 +168,15 @@ $(window).scroll(function() {
 
 
 
-$(window).scroll(function() {
-  var windowHeight = $(window).height();
-  var scrollTop = $(window).scrollTop();
-
-  $('.datacount').each(function() {
-    var $this = $(this);
-    var elementTop = $this.offset().top;
-
-    if (elementTop <= (scrollTop + windowHeight)) {
-      if (!$this.hasClass('counted')) {
-        $this.addClass('counted');
-
-        var countTo = $this.attr('data-count');
-
-        $({ countNum: $this.text() }).animate({
-          countNum: countTo
-        }, {
-          duration: 8000,
-          easing: 'linear',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-          }
-        });
+$('.count').each(function () {
+  $(this).prop('Counter',0).animate({
+      Counter: $(this).text()
+  }, {
+      duration: 4000,
+      easing: 'swing',
+      step: function (now) {
+          $(this).text(Math.ceil(now));
       }
-    }
   });
 });
 
