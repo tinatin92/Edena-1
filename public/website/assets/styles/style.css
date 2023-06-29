@@ -554,13 +554,18 @@ header.header-shadow .header{
   position: relative;
   width: 22.5%;
   min-height: 214px;
-  padding: 12px;
+  padding: 12px 60px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+ 
   justify-content: center;
   border-style: solid;
   border-width: 3px;
+}
+.count2{
+  font-size: 50px !important;
+  margin: 0 0 10px 30px ;
+
 }
 .counter-div:lang(ka) span:last-of-type {
   font-size: 28px;
@@ -571,9 +576,9 @@ header.header-shadow .header{
   transform: translate(0, 20px);
 }
 .counter-div span {
-  display: block;
+  display: inline-block;
   font-weight: 600;
-  width: 70%;
+
 }
 .counter-div span:first-of-type {
   font-size: 54px;
@@ -839,7 +844,10 @@ header.header-shadow .header{
   overflow: hidden;
 }
 
-
+.cou-k{
+  display: flex;
+  align-items: center;
+}
 
 .footer-map iframe {
   width: 100%;
