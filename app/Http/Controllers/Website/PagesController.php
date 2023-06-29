@@ -57,7 +57,7 @@ class PagesController extends Controller
             $news = Section::where('type_id', 2)->with('translations')->first();
             $news_posts = Post::Where('section_id', $model->id)->whereHas('translations', function ($q) {
                 $q->where('active', 1)->whereLocale(app()->getLocale());
-            })->orderBy('date', 'desc')->paginate(settings('News/Project_list_pagination'));
+            })->orderBy('date', 'desc')->paginate(settings('News_pagination'));
 
             return view('website.pages.news.index', compact('model',
                 'breadcrumbs', 'news', 'news_posts', 'language_slugs'));
@@ -124,7 +124,7 @@ class PagesController extends Controller
         ]);
         $values['additional'] = getAdditional($values, config('submissionAttr.additional'));
         $submission = Submission::create($values);
-
+        
         return redirect()->back()->with([
             'message' => trans('website.submission_sent'),
         ]);
@@ -298,10 +298,12 @@ class PagesController extends Controller
             ->orWhere('text', 'LIKE', "%{$searchText}%")
             ->orWhere('keywords', 'LIKE', "%{$searchText}%")
             ->orWhere('locale_additional', 'LIKE', "%{$searchText}%")->pluck('post_id')->toArray();
-        $posts = Post::whereIn('id', $postTranlations)->with('translations', 'parent', 'parent.translations')->paginate(settings('paginate'));
+        $posts = Post::whereIn('id', $postTranlations)->with('translations', 'parent', 'parent.translations')->paginate(settings('search_pagination'));
         $posts->appends(['que' => $searchText]);
+      
         $data = [];
         foreach ($posts as $post) {
+            
             $data[] = [
                 'slug' => $post->getFullSlug() ?? '',
                 'title' => $post->translate(app()->getLocale())->title,
@@ -320,20 +322,20 @@ class PagesController extends Controller
         $products = Section::where('type_id', 6)->with('translations', 'posts')->first();
         $category = Directory::where([['type_id', 0], ['parent_id', null]])->with('translations')->get();
         $language_slugs = $model->getTranslatedFullSlugs();
+        
+        $products_posts = Post::where('section_id', $model->id)
+    ->where(function ($query) use ($que) {
+        $query->whereHas('translations', function ($q) use ($que) {
+            $q->where('title', 'LIKE', "%{$que}%")
+                ->orWhere('desc', 'LIKE', "%{$que}%")
+                ->orWhere('text', 'LIKE', "%{$que}%");
+        })
+        ->orWhereHas('product_category.translations', function ($p) use ($que) {
+            $p->where('title', 'LIKE', "%{$que}%");
+        });
+    })
+    ->paginate(settings('search_pagination'));
 
-        $products_posts = Post::Where('section_id', $model->id)
-            ->whereHas('translations', function ($q) use ($que) {
-                $q->where('title', 'LIKE', "%{$que}%");
-                $q->orWhere('desc', 'LIKE', "%{$que}%");
-                $q->orWhere('text', 'LIKE', "%{$que}%");
-
-            })->orWhereHas('product_category', function ($p) use ($que) {
-
-                $p->whereHas('translations', function ($i) use ($que) {
-                    $i->where('title', 'LIKE', "%{$que}%");
-                });
-            })->paginate(settings('products_pagination'));
-            
         return view('website.pages.products.index', compact('products_posts', 'model', 'category', 'products', 'language_slugs'));
     }
 }

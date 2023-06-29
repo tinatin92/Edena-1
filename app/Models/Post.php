@@ -132,7 +132,6 @@ class Post extends Model
         // $slugs = $this->post_section()->getTranslatedFullSlugs();
         $slugs['ka'] = 'ka';
         $slugs['en'] = 'en';
-        $slugs['ru'] = 'ru';
         $translations = $this->translations;
         foreach ($translations as $key => $value) {
             // dd($value->locale);

@@ -28,22 +28,17 @@ return [
 	"Product_list_pagination" => [
 		"title" => "Paginate",
 		"type" => "text",
-		"value" => "2",
+		"value" => "4",
 	],
-	"News/Project_list_pagination" => [
+	"News_pagination" => [
 		"title" => "Paginate",
 		"type" => "text",
-		"value" => "9",
+		"value" => "1",
 	],
 	"search_pagination" => [
 		"title" => "Paginate",
 		"type" => "text",
-		"value" => "4",
-	],
-	"campaigns_pagination" => [
-		"title" => "Paginate",
-		"type" => "text",
-		"value" => "6",
+		"value" => "3",
 	],
 	"footer_phone" => [
 		"title" => "Phone",
@@ -53,7 +48,7 @@ return [
 	"footer_email" => [
 		"title" => "Email",
 		"type" => "text",
-		"value" => "office@rights.ge",
+		"value" => "info@edena.ge",
 	],
 	"F_address_Map" => [
 		"title" => "address",

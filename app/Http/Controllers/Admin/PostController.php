@@ -224,8 +224,8 @@ class PostController extends Controller
         }
 
         Post::find($post->id)->update($values);
-
-        return  redirect()->back();
+        
+        return Redirect::route('post.update', [app()->getLocale(), $post->id]);
         }
 
     public function destroy($id)

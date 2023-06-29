@@ -163,7 +163,7 @@ class SectionController extends Controller
                 ]);
             }
         }
-
+        session()->flash('locale', app()->getLocale());
         return  redirect()->back();
     }
 

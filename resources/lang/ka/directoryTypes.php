@@ -2,7 +2,7 @@
 
 return [
     'activities' => 'აქტივობები',
-    'kitchen' => 'სამზარეულო',
+    'Category' => 'კატეგორიები',
     'location' => 'ადგილმდებარეობა',
     'our_advice' => 'ჩვენი რჩევა',
 ];

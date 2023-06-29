@@ -51,7 +51,7 @@
 
                             <a href="/{{ $section->getFullSlug() }}">{{ $section[app()->getlocale()]->title }}</a>
                             @if ($section->children->count() > 0)
-                            <span class="burger-img"> <img src="/website/assets/images/Group 10813.png" alt="img"></span>
+                            <span class="burger-img"> <img src="{{asset('website/assets/images/Group 10813.png')}}" alt="img"></span>
                             @endif
 
                             @if ($section->children->count() > 0)

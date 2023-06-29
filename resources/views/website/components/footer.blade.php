@@ -8,15 +8,15 @@
         </div>
         <div class="pre-footer_div2">
             <a class="foot-font" href="{{ settings('Footer_address') }}">
-                {{ __('website.footer_address') }}
+                {{ settings('Footer_address') }}
             </a>
         </div>
         <div class="pre-footer_div2 footer-padding">
             <a href="tel:{{ settings('footer_phone') }}">
-               {{ __('website.footer_phone') }}
+                {{ settings('footer_phone') }}
             </a>
             <a href="address:{{ settings('footer_email') }}">
-                {{ __('website.footer_email') }}
+                {{ settings('footer_email') }}
             </a>
         </div>
     </div>

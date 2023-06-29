@@ -27,8 +27,7 @@
             <h5 style="font-weight: 500; line-height:20px"><b style="margin-right: 15px"></h5>
             <h5 style="font-weight: 400; line-height:20px"><b style="margin-right: 15px">{{trans('admin.text')}} :</b>
                     {{ $submission->text}}</h5>
-                    <h5 style="font-weight: 400; line-height:20px"><b style="margin-right: 15px">{{trans('admin.Surname')}} :</b>
-                        {{ $submission->lastname}}</h5>
+                   
                         
             @foreach ($submission->additional as $key => $additional)
 
