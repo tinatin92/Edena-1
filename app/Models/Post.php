@@ -127,19 +127,20 @@ class Post extends Model
           return $this->belongsTo('App\Models\Section', 'section_id')->first();
       }
 
-    public function getTranslatedFullSlugs()
-    {
-        // $slugs = $this->post_section()->getTranslatedFullSlugs();
+      public function getTranslatedFullSlugs() {
+     
+        
         $slugs['ka'] = 'ka';
         $slugs['en'] = 'en';
+
         $translations = $this->translations;
         foreach ($translations as $key => $value) {
             // dd($value->locale);
-            $slugs[$value->locale] = $slugs[$value->locale].'/'.$value->slug;
+            $slugs[$value->locale] = $slugs[$value->locale] . '/' . $value->slug;
         }
-
         return $slugs;
     }
+
 
     public function product_category()
     {
