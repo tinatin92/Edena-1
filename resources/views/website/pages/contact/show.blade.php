@@ -24,7 +24,13 @@
         </div>
     </section>
     @endif
- 
+ <div class="submitt-alert">
+    <div class="submitt-alert-back"></div>
+    <div class="submitt-alert-text">
+    <p>თქვენი მესიჯი წრმატებით გაიგზავნა!</p>
+    <img src="{{ asset('website/assets/images/charm_circle-tick.png') }}" alt="">
+    </div>
+ </div>
     <section class="container">
         <div class="contact-main">
             <div class="contact-form">

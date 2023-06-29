@@ -67,7 +67,7 @@
         <h3 class="h3">{{ $products->translate(app()->getlocale())->title }}</h3>
         <div class="products">
             @foreach($products_posts as $post)
-           
+          
             <div class="product">
                 <a href="/{{  $post->getFullSlug() }}">
                     <div class="product-img">
@@ -75,7 +75,8 @@
                     </div>
                     <div>
                         @foreach($category as $post_category)
-                        @if($post->additional['category'] == $post_category->id)
+                     
+                        @if(isset($post->additional['category']) && $post->additional['category'] == $post_category->id)
                         <span class="product-title">{{ $post_category->translate(app()->getlocale())->title }}</span>
                         @endif
                         @endforeach

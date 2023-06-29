@@ -35,7 +35,7 @@ return [
 	"about_portal" => "About Portal",
 	"adress" => "Address",
 	"all" => "All",
-	"Share_this_via" => null,
+	"Share_this_via" => "Share",
 	"already_subscribed" => "Already subscribe",
 	"footer_address" => "თერჯოლის მუნიციპალიტეტი, საქართველო ი. ჭავჭავაძე გამზინი #143",
 	"footer_email" => "info@edena.ge",

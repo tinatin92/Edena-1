@@ -89,7 +89,7 @@
                     @if (isset($sections) && count($sections) > 0)
                     @foreach($sections as $section)
                     <li @if($section->type_id == 3) class="contact" @endif>
-                        <a href="/{{ $section->getFullSlug() }}">{{ $section[app()->getlocale()]->title }}</a>
+                        <a class="menu-hoverline" href="/{{ $section->getFullSlug() }}">{{ $section[app()->getlocale()]->title }}</a>
                         @if ($section->children->count() > 0)
                         <div class="submenu-space">
                             <div class="sub-menu">
@@ -99,11 +99,12 @@
                                         @foreach ($section->children as $subSec)
                                         <li class="sub-menu_li">
                                             <a href="/{{ $subSec->getFullSlug() }}">{{ strtoupper($subSec[app()->getlocale()]->title) }}</a>
+                                            <span class="icon-Vector-7"></span>
                                         </li>
                                         @endforeach
 
                                     </ul>
-                                    <span class="round"></span>
+                                   
                                 </nav>
                             </div>
                         </div>

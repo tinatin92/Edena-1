@@ -53,13 +53,14 @@
         </div>
         <div class="share">
             <h3>{{ __('website.Share_this_via') }}:</h3>
-             <a data-href="/{{$model->getfullslug()}}" data-layout="button_count" data-size="small"><a
+             <a data-href="/{{$model->getfullslug()}}" data-layout="button_count" data-size="small">
+                <a
                 target="_blank"
                 href="https://www.facebook.com/sharer/sharer.php?u=/{{$model->getfullslug()}}&amp;src={{$model->translate(app()->getlocale())->title}}"
                 class="fb-xfbml-parse-ignore"> <span class="icon-Group-2210"></span></a>
-            <a  <a class="twitter-share-button"
+            <a  class="twitter-share-button"
             href="https://twitter.com/intent/tweet?text=/{{$model->getfullslug()}}"
-            target="_blank"> <span class="icon-Group-10027"></span></a>
+            target="_blank"> <span class="icon-Group-10027"></span></a>      
         </div>
     </section>
 
