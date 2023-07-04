@@ -197,7 +197,9 @@
   .counter-div{
     padding: 12px 31px;
   }
-
+  .header-menu li.contact a:lang(ka){
+    padding: 12px 18px;
+  }
 }
 @media (max-width: 1400px) {
   .share-icons a {

@@ -53,8 +53,8 @@
             @foreach($counting_banner as $countBanner)
             <div class="counter-div">
                 <div class="cou-k">
-                    <span class="count" {{ $countBanner->translate(app()->getlocale())->Counting_numbers }}">
-                        {{ $countBanner->translate(app()->getlocale())->Counting_numbers }}
+                    <span class="count" data-count="{{ $countBanner->translate(app()->getlocale())->Counting_numbers }}">
+                        {{ $countBanner->translate(app()->getlocale())->Counting_numbers }}"
                     </span>
                     <span class="count2">
                         {{ $countBanner->translate(app()->getlocale())->Counting_numbers_symbol }}

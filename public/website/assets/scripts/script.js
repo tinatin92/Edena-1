@@ -168,7 +168,7 @@ $(window).scroll(function() {
 
 
 
-$('.count').each(function () {
+/* $('.count').each(function () {
   $(this).prop('Counter',0).animate({
       Counter: $(this).text()
   }, {
@@ -178,7 +178,7 @@ $('.count').each(function () {
           $(this).text(Math.ceil(now));
       }
   });
-});
+}); */
 
 
 const  span= document.querySelector('.round');
@@ -211,3 +211,33 @@ setTimeout(function() {
   $('.submitt-alert').fadeOut();
 }, 3000);
   
+$(window).scroll(function() {
+  var windowHeight = $(window).height();
+  var scrollTop = $(window).scrollTop();
+
+  $('.count').each(function() {
+    var $this = $(this);
+    var elementTop = $this.offset().top;
+
+    if (elementTop <= (scrollTop + windowHeight)) {
+      if (!$this.hasClass('counted')) {
+        $this.addClass('counted');
+
+        var countTo = $this.attr('data-count');
+
+        $({ countNum: $this.text() }).animate({
+          countNum: countTo
+        }, {
+          duration: 8000,
+          easing: 'linear',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+          }
+        });
+      }
+    }
+  });
+});

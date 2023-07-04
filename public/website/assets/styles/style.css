@@ -213,7 +213,9 @@ header.header-shadow .header{
   border-radius: 30px;
   border: 1px solid #fff;
 }
-
+.header-menu li.contact a:lang(ka){
+  padding: 16px 28px 11px 28px;
+}
 .header-menu nav .menu-ul .contact:hover a {
   background-color: #fff;
   border: 1px solid #faa61a;
@@ -351,6 +353,9 @@ header.header-shadow .header{
   color: #000;
   margin: 0 0 0 10px;
   transition: 0.3s;
+}
+.language a:lang(ka){
+  font-weight: 700;
 }
 .language a:hover {
   color: #faa61a;
@@ -565,7 +570,13 @@ header.header-shadow .header{
 .count2{
   font-size: 50px;
   margin: 0 0 10px 30px ;
-
+text-transform: uppercase;
+}
+.count:lang(ka){
+  font-family: "Jost", sans-serif;
+}
+.count2:lang(ka){
+  font-family: "Jost", sans-serif;
 }
 .counter-text{
   font-size: 28px;
@@ -1028,6 +1039,11 @@ header.header-shadow .header{
   font-size: 36px;
   color: #b0b0b0;
 }
+.pagination  span{
+  font-size: 36px;
+  margin: -14px 0 0 0;
+  color: #dcdada;
+}
 .pagination a:last-of-type span {
   color: #faa61a;
 }
@@ -1038,6 +1054,21 @@ header.header-shadow .header{
 }
 .pagination ul li {
   list-style: none;
+}
+.pagination ul li span{
+  text-decoration: none;
+  color: #000;
+  font-size: 17px;
+  margin: 9px 6px 6px 6px;
+}
+.pagination ul li.active{
+  font-weight: 700;
+  font-size: 17px;
+}
+.pagination ul li.active span{
+  display: block;
+  font-weight: 700;
+  font-size: 17px;
 }
 .pagination ul li a {
   text-decoration: none;
