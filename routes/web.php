@@ -78,7 +78,7 @@ Route::middleware(['auth.check'])->group(function () {
         Route::get('/admin/sections/create', [SectionController::class, 'create']);
         Route::post('/admin/sections/create', [SectionController::class, 'store']);
         Route::get('/admin/sections/edit/{id}', [SectionController::class, 'edit']);
-        Route::post('/admin/sections/edit/{id}', [SectionController::class, 'update']);
+        Route::post('/admin/sections/edit/{id}', [SectionController::class, 'update'])->name('section.update');
         Route::get('/admin/sections/destroy/{id}', [SectionController::class, 'destroy']);
         Route::post('/admin/sections/arrange', [SectionController::class, 'arrange']);
 

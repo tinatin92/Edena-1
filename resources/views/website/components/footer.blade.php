@@ -27,7 +27,7 @@
             src="{{ settings('F_address_Map') }}"  width="640" height="480"></iframe>
     </div>
     <div class="footer-info">
-        <a href="#">All Rights Reserved</a>
-        <a href="#">Kindly Designed by Idea Design Group</a>
+        <a href="#">{{ __('admin.COPYRIGHT') }}</a>
+        <a href="https://ideadesigngroup.ge/en">{{ __('admin.MADE_BY_IDEA') }}</a>
     </div>
 </footer>

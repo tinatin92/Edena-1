@@ -283,36 +283,33 @@ class PagesController extends Controller
     }
 
     public static function search(Request $request)
-    {
-        $model = [];
-        $language_slugs['ka'] = 'ka/search?que='.$request->que;
-        $language_slugs['en'] = 'en/search?que='.$request->que;
-        $validatedData = $request->validate([
-            'que' => 'required',
-        ]);
-        $searchText = $validatedData['que'];
-
-        $postTranlations = PostTranslation::whereActive(true)->whereLocale(app()->getLocale())
-            ->where('title', 'LIKE', "%{$searchText}%")
-            ->orWhere('desc', 'LIKE', "%{$searchText}%")
-            ->orWhere('text', 'LIKE', "%{$searchText}%")
-            ->orWhere('keywords', 'LIKE', "%{$searchText}%")
-            ->orWhere('locale_additional', 'LIKE', "%{$searchText}%")->pluck('post_id')->toArray();
-        $posts = Post::whereIn('id', $postTranlations)->with('translations', 'parent', 'parent.translations')->paginate(settings('search_pagination'));
-        $posts->appends(['que' => $searchText]);
-      
-        $data = [];
-        foreach ($posts as $post) {
-            
-            $data[] = [
-                'slug' => $post->getFullSlug() ?? '',
-                'title' => $post->translate(app()->getLocale())->title,
-                'desc' => str_limit(strip_tags($post->translate(app()->getLocale())->desc)),
-            ];
-        }
-
-        return view('website.pages.search.index', compact('posts', 'language_slugs', 'searchText'));
-    }
+	{
+		$model = [];
+		$language_slugs['ka'] = 'ka/search?que='.$request->que;
+		$language_slugs['en'] = 'en/search?que='.$request->que;
+		$validatedData = $request->validate([
+			'que' => 'required',
+		]);
+		$searchText = $validatedData['que'];
+		
+		$postTranlations = PostTranslation::whereActive(true)->whereLocale(app()->getLocale())
+			->where('title', 'LIKE', "%{$searchText}%")
+			->orWhere('desc', 'LIKE', "%{$searchText}%")
+			->orWhere('text', 'LIKE', "%{$searchText}%")
+			->orWhere('keywords', 'LIKE', "%{$searchText}%")
+			->orWhere('locale_additional', 'LIKE', "%{$searchText}%")->pluck('post_id')->toArray();
+		$posts  = Post::whereIn('id', $postTranlations)->with('translations', 'parent', 'parent.translations')->paginate(settings('paginate'));
+		$posts->appends(['que' => $searchText]);
+		$data = [];
+		foreach ($posts as $post) {
+			$data[] = [
+				'slug' => $post->getFullSlug() ?? '#',
+				'title' => $post->translate(app()->getLocale())->title,
+				'desc' => str_limit(strip_tags($post->translate(app()->getLocale())->desc)),
+			];
+		}
+		return view('website.pages.search.index', compact('posts', 'language_slugs' ,'searchText'));
+	}
     public static function SearchProduct(request $request)
     {
 
@@ -324,18 +321,21 @@ class PagesController extends Controller
         $language_slugs = $model->getTranslatedFullSlugs();
         
         $products_posts = Post::where('section_id', $model->id)
-    ->where(function ($query) use ($que) {
-        $query->whereHas('translations', function ($q) use ($que) {
-            $q->where('title', 'LIKE', "%{$que}%")
-                ->orWhere('desc', 'LIKE', "%{$que}%")
-                ->orWhere('text', 'LIKE', "%{$que}%");
+        ->where(function ($query) use ($que) {
+            $query->whereHas('translations', function ($q) use ($que) {
+                $q->where('title', 'LIKE', "%{$que}%")
+                    ->orWhere('desc', 'LIKE', "%{$que}%")
+                    ->orWhere('text', 'LIKE', "%{$que}%");
+            })
+            ->orWhereHas('product_category', function ($p) use ($que) {
+                $p->whereHas('translations', function ($t) use ($que) {
+                    $t->where('title', 'LIKE', "%{$que}%");
+                });
+            });
         })
-        ->orWhereHas('product_category.translations', function ($p) use ($que) {
-            $p->where('title', 'LIKE', "%{$que}%");
-        });
-    })
-    ->paginate(settings('search_pagination'));
-
+        ->paginate(settings('search_pagination'));
+    
+    // dd( $category , $products_posts );
         return view('website.pages.products.index', compact('products_posts', 'model', 'category', 'products', 'language_slugs'));
     }
 }

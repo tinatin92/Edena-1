@@ -41,7 +41,7 @@
             </div>
 
             <div class="share">
-                <h3>Share this via:</h3>
+                <h3>{{ __('website.Share_this_via') }}:</h3>
                 <a href=""> <span class="icon-Group-2210"></span></a>
                 <a href=""> <span class="icon-Group-10027"></span></a>
             </div>
