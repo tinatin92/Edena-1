@@ -27,7 +27,7 @@ return [
     'Product-Sales' => 'გაყიდული პროდუქცია',
     'Read_More' => 'იხილეთ მეტი',
     'See_All' => 'სრულად ნახვა',
-    'Sheare_this' => 'გაზიარება',
+    'Share_this' => 'გაზიარება',
     'Size' => 'ზომა',
     'Subscribe' => 'გამოიწერე ',
     'Subscribe_news' => 'გამოიწერე სიახლეები',

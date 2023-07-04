@@ -291,42 +291,4 @@ function cutLocaleString($str)
 
     return str_replace("$needtohide", '', $str);
 }
-// function filterProducts($model, $request)
-// {
-//     $products = Section::where('type_id', 6)
-//         ->with('translations', 'posts')
-//         ->first();
 
-//     $category = Directory::where([
-//         ['type_id', 0],
-//         ['parent_id', null]
-//     ])->with('translations')->get();
-
-//     $filter_cat_arr = [];
-//     $filter_category = null;
-
-//     if ($request->category != null) {
-//         $filter_category = Directory::where([
-//             ['type_id', 0],
-//             ['id', $request->category]
-//         ])->with('translations')->first();
-
-//         $filter_cat_arr[] = $filter_category->id;
-
-//     }
-
-//     $products_posts = Post::where('section_id', $products->id)
-//         ->when(count($filter_cat_arr) == 0, function ($query) {
-//             return $query->with('translations')
-//                 ->paginate(settings('products_pagination'));
-//         })
-//         ->when(count($filter_cat_arr) > 0, function ($query) use ($filter_cat_arr) {
-//             return $query->whereIn('additional->category', $filter_cat_arr)
-//                 ->with('translations')
-//                 ->orderBy('date', 'asc')
-//                 ->paginate(settings('products_pagination'));
-//         })
-//         ->get();
-
-//     return view("website.pages.products.index", compact('model', 'breadcrumbs', 'products_posts', 'products', 'category', 'language_slugs', 'filter_category'));
-// }

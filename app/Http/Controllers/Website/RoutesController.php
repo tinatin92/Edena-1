@@ -15,12 +15,8 @@ class RoutesController extends Controller
             return PagesController::search($request);
         }
 
-        if ($url == 'unsubscribe') {
-            return PagesController::unsubscribe($url);
-        }
-
         $slug = Slug::where('fullSlug', app()->getLocale()."/{$url}")->first();
-
+       
         $model = $slug->slugable()->first();
 
         if ($slug->slugable_type === "App\Models\Section") {

@@ -93,7 +93,7 @@
                                    
                                     <a href="{{ route('directory.list', [app()->getLocale(), $key]) }}">
                                         <i class="mdi mdi-wrap-disabled"></i>
-                                        {{ trans($directoryType) }}
+                                        {{ trans('admin.Category') }}
                                     </a>
                                     </li>
 								@endforeach
