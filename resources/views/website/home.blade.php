@@ -60,7 +60,7 @@
                         {{ $countBanner->translate(app()->getlocale())->Counting_numbers_symbol }}
                     </span>
                 </div>
-                <span>
+                <span class="counter-text">
                     {{ $countBanner->translate(app()->getlocale())->title }}
                 </span>
             </div>

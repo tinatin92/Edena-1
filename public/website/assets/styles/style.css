@@ -197,7 +197,7 @@ header.header-shadow .header{
   font-weight: 500;
   font-size: 20px;
   font-weight: 500;
-  margin: 0 20px 0 0;
+  margin: 0 50px 0 0;
   transition: 0.3s;
   
 }
@@ -563,11 +563,15 @@ header.header-shadow .header{
   border-width: 3px;
 }
 .count2{
-  font-size: 50px !important;
+  font-size: 50px;
   margin: 0 0 10px 30px ;
 
 }
-.counter-div:lang(ka) span:last-of-type {
+.counter-text{
+  font-size: 28px;
+  font-weight: 500;
+}
+.counter-text:lang(ka){
   font-size: 28px;
   font-family: "BPG Nino Mtavruli";
   line-height: 38px;
@@ -580,15 +584,17 @@ header.header-shadow .header{
   font-weight: 600;
 
 }
-.counter-div span:first-of-type {
+/* .counter-div span:first-of-type {
   font-size: 54px;
   font-weight: 500;
   margin: 0 0 10px 0;
 }
-.counter-div span:last-of-type {
-  font-size: 28px;
-
-}
+ */
+ .count{
+  font-size: 54px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+ }
 .counter-div:nth-child(1) {
   border-image: linear-gradient(45deg, #faa61a, #07562a) 1;
 }
