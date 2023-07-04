@@ -206,3 +206,8 @@ dropdown.addEventListener('mouseleave', function() {
     span.style.top = 0;
   }
 });
+
+setTimeout(function() {
+  $('.submitt-alert').fadeOut();
+}, 3000);
+  

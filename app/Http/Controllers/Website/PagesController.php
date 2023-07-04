@@ -149,7 +149,7 @@ class PagesController extends Controller
         })->where('active_on_home', 1)->limit(7)->get();
 
         $category = Directory::where('type_id', 0)->with('translation')->get();
-
+        
         $about_section = Section::where('type_id', 4)->with('translations')->first();
         $about_posts = Post::whereHas('parent', function ($q) {
             $q->where('type_id', 4);
