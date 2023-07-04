@@ -52,15 +52,17 @@
         <div class="counter">
             @foreach($counting_banner as $countBanner)
             <div class="counter-div">
-                <span class="count"{{ $countBanner->translate(app()->getlocale())->Counting_numbers }}">
-                    {{ $countBanner->translate(app()->getlocale())->Counting_numbers }}
-                </span>
-                <span>
-                    {{ $countBanner->translate(app()->getlocale())->Counting_numbers_symbol }} 
-                </span>
-                    <span>
-                        {{ $countBanner->translate(app()->getlocale())->title }}
+                <div class="cou-k">
+                    <span class="count" {{ $countBanner->translate(app()->getlocale())->Counting_numbers }}">
+                        {{ $countBanner->translate(app()->getlocale())->Counting_numbers }}
                     </span>
+                    <span class="count2">
+                        {{ $countBanner->translate(app()->getlocale())->Counting_numbers_symbol }}
+                    </span>
+                </div>
+                <span>
+                    {{ $countBanner->translate(app()->getlocale())->title }}
+                </span>
             </div>
             @endforeach
         </div>
@@ -75,7 +77,6 @@
 
         <div class="products">
             @foreach($products_posts as $post)
-
             <div class="product">
                 <a href="/{{  $post->getFullSlug() }}">
                     <div class="product-img">
@@ -83,7 +84,8 @@
                     </div>
                     <div>
                         @foreach($category as $post_category)
-                        @if($post->additional['category'] == $post_category->id)
+
+                        @if(isset($post->additional['category']) && $post->additional['category'] == $post_category->id)
                         <span class="product-title">{{ $post_category->translate(app()->getlocale())->title }}</span>
                         @endif
                         @endforeach
@@ -97,8 +99,7 @@
             <div class="product product2">
                 <a href="/{{ $products->getFullSlug() }}" target="blank">
                     <div class="product-img2">
-                        <img class="product-img2-img" src="{{ asset('website/assets/images/Vector (10).png') }}"
-                            alt="img">
+                        <img class="product-img2-img" src="{{ asset('website/assets/images/Vector (10).png') }}" alt="img">
                         <span>{{ __('website.See_All') }}</span>
                         <span class="icon-_1"></span>
                     </div>
@@ -117,17 +118,14 @@
 
                     <li>
 
-                        <a href="{{ $cat->translate(app()->getlocale())->slug }}" target="blank"
-                            onmouseenter="changeImage('{{ image($cat->cover) }}')">{{ $cat->translate(app()->getlocale())->title }}</a>
+                        <a href="{{ $cat->translate(app()->getlocale())->slug }}" target="blank" onmouseenter="changeImage('{{ image($cat->cover) }}')">{{ $cat->translate(app()->getlocale())->title }}</a>
                         <img class="hoverImage" src="{{ asset('/website/assets/images/Vector.jpg') }}" alt="img">
                     </li>
                     @endforeach
 
             </div>
             <div class="imgArea">
-                <img id="slider"
-                    src="{{ asset('/website/assets/images/337670179_450837493894440_3681745197021950728_n.jpg') }}"
-                    alt="img">
+                <img id="slider" src="{{ asset('/website/assets/images/337670179_450837493894440_3681745197021950728_n.jpg') }}" alt="img">
 
             </div>
         </div>
@@ -138,7 +136,6 @@
         function changeImage(anything) {
             document.getElementById('slider').src = anything;
         }
-
     </script>
 </main>
 @endsection
