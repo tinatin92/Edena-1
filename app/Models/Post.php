@@ -144,6 +144,6 @@ class Post extends Model
 
     public function product_category()
     {
-        return $this->belongsTo('App\Models\Section', 'additional->category', 'id')->with('translations', 'children');
+        return $this->belongsTo('App\Models\Directory', 'additional->category', 'id')->with('translations', 'children');
     }
 }
